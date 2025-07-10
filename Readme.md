@@ -343,15 +343,6 @@ processed_img.show()  # Display processed image
 # Check confidence
 print(f"Confidence: {solver.get_confidence():.1f}%")
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -362,13 +353,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [OpenCV](https://opencv.org/) - Computer vision library
 - [Selenium](https://selenium.dev/) - Web automation framework
 - [Pillow](https://pillow.readthedocs.io/) - Python imaging library
-
-## 📞 Support
-
-For issues, questions, or contributions:
-- Open an issue on GitHub
-- Check the documentation in the `docs/` directory
-- Review existing issues and discussions
 
 ---
 
