@@ -4,7 +4,7 @@ from io import BytesIO
 from PIL import Image, ImageFilter
 
 # Set path to tesseract (adjust if different)
-pytesseract.pytesseract.tesseract_cmd = r"D:\Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r""
 
 def clean_image_noise(img):
     img = img.convert("RGBA")
@@ -26,7 +26,7 @@ def clean_image_noise(img):
     return img
 
 def fetch_image(headers):
-    response = requests.get('http://challenge01.root-me.org/programmation/ch8/', headers=headers)
+    response = requests.get('', headers=headers)
     soup = BeautifulSoup(response.text, 'html.parser')
     image_src = soup.img['src']
     base64_data = re.sub('^data:image/.+;base64,', '', image_src)
@@ -36,7 +36,7 @@ def fetch_image(headers):
     return img
 
 def get_captcha_value_and_submit(img, headers):
-    headers['Referer'] = 'http://challenge01.root-me.org/programmation/ch8/'
+    headers['Referer'] = ''
     headers['Cookie'] = 'PHPSESSID=i0enc8t6egnc2g4h67cj0j9pq0'  # Replace with your valid session ID
 
     img.save("debug_captcha.png")  # Save for debugging
@@ -51,7 +51,7 @@ def get_captcha_value_and_submit(img, headers):
     payload = {'cametu': captcha_value}
     print('Sending payload:', payload)
 
-    response = requests.post('http://challenge01.root-me.org/programmation/ch8/', data=payload, headers=headers)
+    response = requests.post('', data=payload, headers=headers)
     return response.text
 
 if __name__ == '__main__':
